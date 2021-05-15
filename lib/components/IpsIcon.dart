@@ -4,15 +4,15 @@ import '../utils/colors.dart';
 
 class IpsIcon extends StatelessWidget {
   final IconData icon;
-  Color color;
+  final Color color;
 
-  IpsIcon(this.icon, this.color = IpsColors.mute);
+  IpsIcon({@required this.icon, this.color});
 
   @override
   Widget build(BuildContext context) {
     return Icon(
       this.icon,
-      color: this.color,
+      color: this.color ?? IpsColors.mute,
       size: 26,
     );
   }
