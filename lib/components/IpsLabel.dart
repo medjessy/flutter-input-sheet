@@ -4,15 +4,16 @@ import '../utils/colors.dart';
 
 class IpsLabel extends StatelessWidget {
   final String value;
+  final Color color;
 
-  IpsLabel(this.value);
+  IpsLabel({@required this.value, this.color});
 
   @override
   Widget build(BuildContext context) {
     return Text(
       this.value,
       style: TextStyle(
-        color: IpsColors.mute,
+        color: this.color ?? IpsColors.mute,
         fontWeight: FontWeight.bold,
         fontFamily: 'Montserrat',
         fontSize: 12,
