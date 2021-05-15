@@ -4,7 +4,7 @@ import '../utils/colors.dart';
 
 class IpsIcon extends StatelessWidget {
   final IconData icon;
-  final Color color;
+  Color color;
 
   IpsIcon(this.icon, this.color = IpsColors.mute);
 
