@@ -6,13 +6,13 @@ class IpsIcon extends StatelessWidget {
   final IconData icon;
   final Color color;
 
-  IpsIcon(this.icon, this.color);
+  IpsIcon(this.icon, this.color = IpsColors.mute);
 
   @override
   Widget build(BuildContext context) {
     return Icon(
       this.icon,
-      color: ths.color ?? IpsColors.mute,
+      color: this.color,
       size: 26,
     );
   }
