@@ -260,8 +260,7 @@ class InputSheet {
     double height,
     ResolutionPreset resolution = ResolutionPreset.high,
     String labelInitializingCamera = "Camera is not initialized yet",
-    String labelNoCameraAvailable =
-        "There is no camera available on this device",
+    String labelNoCameraAvailable = "There is no camera available on this device",
     @required Function(File, Uint8List) onDone,
   }) {
     Sheet(
@@ -287,6 +286,20 @@ class InputSheet {
     );
   }
 
+  newPhoto({
+    File file,
+    @required Function(File, Uint8List) onDone,
+  }) {
+    Sheet(
+      this._context,
+      null,
+      this.cancelText,
+      this.doneText,
+      paddingVertical: 0,
+      showDoneButton: false,
+    ).openCamera(file: file, onDone: onDone);
+  }
+
   video({
     File file,
     String url,
@@ -297,8 +310,7 @@ class InputSheet {
     String labelCompressing = "Compressing...",
     ResolutionPreset resolution = ResolutionPreset.high,
     String labelInitializingCamera = "Camera is not initialized yet",
-    String labelNoCameraAvailable =
-        "There is no camera available on this device",
+    String labelNoCameraAvailable = "There is no camera available on this device",
     @required Function(File, Uint8List) onDone,
   }) {
     Sheet(

@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:input_sheet/components/IpsCard.dart';
 import 'package:input_sheet/components/IpsError.dart';
 import 'package:input_sheet/components/IpsIcon.dart';
 import 'package:input_sheet/components/IpsLabel.dart';
 import 'package:input_sheet/components/IpsValue.dart';
 import 'package:input_sheet/input_sheet.dart';
-import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:input_sheet/utils/colors.dart';
 
 void main() => runApp(BottomBarApp());
@@ -78,9 +78,9 @@ class _FirstPage extends State<FirstPage> {
               ),
               SizedBox(height: 15),
               IpsCard(
-                label: IpsLabel("Name"),
+                label: IpsLabel(value: "Name"),
                 value: IpsValue(_name ?? "Touch to edit..."),
-                icon: IpsIcon(FeatherIcons.user),
+                icon: IpsIcon(icon: FeatherIcons.user),
                 error: IpsError(_errors['_name']),
                 onClick: () => InputSheet(
                   context,

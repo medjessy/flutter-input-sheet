@@ -3,22 +3,18 @@ import 'dart:typed_data';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:input_sheet/components/IpsCard.dart';
 import 'package:input_sheet/components/IpsError.dart';
 import 'package:input_sheet/components/IpsIcon.dart';
 import 'package:input_sheet/components/IpsLabel.dart';
 import 'package:input_sheet/components/IpsPhoto.dart';
-import 'package:input_sheet/components/IpsVideo.dart';
 import 'package:input_sheet/components/IpsValue.dart';
+import 'package:input_sheet/components/IpsVideo.dart';
 import 'package:input_sheet/input_sheet.dart';
-
-import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:input_sheet/utils/colors.dart';
 
 import 'utils/formatter.dart';
-
-
 
 void main() => runApp(MyApp());
 
@@ -67,16 +63,16 @@ class _MyHomePageState extends State<MyHomePage> {
   };
 
   Map<String, String> _categories = {
-    "comedy"    : "Comedy",
-    "romance"   : "Romance",
-    "horror"    : "Horror",
-    "action"    : "Action",
-    "adventure" : "Adventure",
+    "comedy": "Comedy",
+    "romance": "Romance",
+    "horror": "Horror",
+    "action": "Action",
+    "adventure": "Adventure",
     "dramaturgy": "Dramaturgy",
   };
 
   String get _selectedCategoriesLabel {
-    List<String> selecteds = (_selectedCategories??[]).map((value) => _categories[value]).toList();
+    List<String> selecteds = (_selectedCategories ?? []).map((value) => _categories[value]).toList();
     return selecteds.length == 0 ? "Touch to select..." : selecteds.join(", ");
   }
 
@@ -97,9 +93,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               SizedBox(height: 15),
               IpsCard(
-                label: IpsLabel("Name"),
+                label: IpsLabel(value: "Name"),
                 value: IpsValue(_name ?? "Touch to edit..."),
-                icon: IpsIcon(FeatherIcons.user),
+                icon: IpsIcon(icon: FeatherIcons.user),
                 error: IpsError(_errors['_name']),
                 onClick: () => InputSheet(
                   context,
@@ -120,9 +116,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               SizedBox(height: 15),
               IpsCard(
-                label: IpsLabel("Describe about you"),
+                label: IpsLabel(value: "Describe about you"),
                 value: IpsValue(_about ?? "Touch to edit..."),
-                icon: IpsIcon(FeatherIcons.fileText),
+                icon: IpsIcon(icon: FeatherIcons.fileText),
                 error: IpsError(_errors['_about']),
                 onClick: () => InputSheet(
                   context,
@@ -143,9 +139,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               SizedBox(height: 15),
               IpsCard(
-                label: IpsLabel("Phone"),
+                label: IpsLabel(value: "Phone"),
                 value: IpsValue(_phone ?? "Touch to edit..."),
-                icon: IpsIcon(FeatherIcons.phone),
+                icon: IpsIcon(icon: FeatherIcons.phone),
                 error: IpsError(_errors['_phone']),
                 onClick: () => InputSheet(
                   context,
@@ -168,11 +164,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               SizedBox(height: 15),
               IpsCard(
-                label: IpsLabel("Set your salary"),
-                value: IpsValue(_currency == null
-                    ? "Touch to edit..."
-                    : Formatters.formatUS(_currency).symbolOnLeft),
-                icon: IpsIcon(FeatherIcons.dollarSign),
+                label: IpsLabel(value: "Set your salary"),
+                value: IpsValue(_currency == null ? "Touch to edit..." : Formatters.formatUS(_currency).symbolOnLeft),
+                icon: IpsIcon(icon: FeatherIcons.dollarSign),
                 error: IpsError(_errors['_currency']),
                 onClick: () => InputSheet(
                   context,
@@ -198,11 +192,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               SizedBox(height: 15),
               IpsCard(
-                label: IpsLabel("Your preferred flavor"),
-                value: IpsValue(_flavors.containsKey(_flavor)
-                    ? _flavors[_flavor]
-                    : "Touch to select..."),
-                icon: IpsIcon(FeatherIcons.menu),
+                label: IpsLabel(value: "Your preferred flavor"),
+                value: IpsValue(_flavors.containsKey(_flavor) ? _flavors[_flavor] : "Touch to select..."),
+                icon: IpsIcon(icon: FeatherIcons.menu),
                 error: IpsError(_errors['_currency']),
                 onClick: () => InputSheet(
                   context,
@@ -223,9 +215,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               SizedBox(height: 15),
               IpsCard(
-                label: IpsLabel("Movie categories you like"),
+                label: IpsLabel(value: "Movie categories you like"),
                 value: IpsValue(_selectedCategoriesLabel),
-                icon: IpsIcon(FeatherIcons.menu),
+                icon: IpsIcon(icon: FeatherIcons.menu),
                 error: IpsError(_errors['_currency']),
                 onClick: () => InputSheet(
                   context,
@@ -246,9 +238,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               SizedBox(height: 15),
               IpsCard(
-                label: IpsLabel("Your birth date"),
+                label: IpsLabel(value: "Your birth date"),
                 value: IpsValue(_birth ?? "Touch to select..."),
-                icon: IpsIcon(FeatherIcons.calendar),
+                icon: IpsIcon(icon: FeatherIcons.calendar),
                 error: IpsError(_errors['_birth']),
                 onClick: () => InputSheet(
                   context,
@@ -257,8 +249,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   doneText: "Confirm",
                 ).date(
                   value: _birth,
-                  minDateTime:
-                      DateTime.now().subtract(Duration(days: 365 * 100)),
+                  minDateTime: DateTime.now().subtract(Duration(days: 365 * 100)),
                   maxDateTime: DateTime.now(),
                   format: "yyyy/MM/dd",
                   pickerFormat: "yyyy|MMMM|dd",
@@ -273,9 +264,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               SizedBox(height: 15),
               IpsCard(
-                label: IpsLabel("Your dinner time"),
+                label: IpsLabel(value: "Your dinner time"),
                 value: IpsValue(_dinner ?? "Touch to select..."),
-                icon: IpsIcon(FeatherIcons.clock),
+                icon: IpsIcon(icon: FeatherIcons.clock),
                 error: IpsError(_errors['_dinner']),
                 onClick: () => InputSheet(
                   context,
@@ -298,9 +289,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               SizedBox(height: 15),
               IpsCard(
-                label: IpsLabel("Schedule an appointment"),
+                label: IpsLabel(value: "Schedule an appointment"),
                 value: IpsValue(_appointment ?? "Touch to select..."),
-                icon: IpsIcon(FeatherIcons.calendar),
+                icon: IpsIcon(icon: FeatherIcons.calendar),
                 error: IpsError(_errors['_appointment']),
                 onClick: () => InputSheet(
                   context,
@@ -333,10 +324,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         context,
                         cancelText: "Cancel",
                         doneText: "Confirm",
-                      ).photo(
+                      ).newPhoto(
                         file: _photo,
-                        onDone: (File file, Uint8List thumbnail) =>
-                            setState(() {
+                        onDone: (File file, Uint8List thumbnail) => setState(() {
                           _photo = file;
                         }),
                       ),
@@ -351,8 +341,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         doneText: "Confirm",
                       ).video(
                         file: _video,
-                        onDone: (File file, Uint8List thumbnail) =>
-                            setState(() {
+                        onDone: (File file, Uint8List thumbnail) => setState(() {
                           _video = file;
                           _thumbnailVideo = thumbnail;
                         }),
