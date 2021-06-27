@@ -25,7 +25,7 @@ dependencies:
   permission_handler: 8.1.1
   flutter_feather_icons: ^1.0.3
   cached_network_image: ^2.2.0+1
-  flutter_keyboard_size: ^0.2.0
+  flutter_keyboard_size: ^1.0.0+3
   flutter_cupertino_date_picker:
     git:
       url: https://github.com/medjessy/flutter-cupertino-date-picker
