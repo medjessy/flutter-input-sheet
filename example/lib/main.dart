@@ -324,7 +324,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         context,
                         cancelText: "Cancel",
                         doneText: "Confirm",
-                      ).newPhoto(
+                      ).photo(
                         file: _photo,
                         onDone: (File file, Uint8List thumbnail) => setState(() {
                           _photo = file;
