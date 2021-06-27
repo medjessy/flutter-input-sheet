@@ -9,6 +9,7 @@ import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart
 import 'package:input_sheet/inputs/IpsInputCamera.dart';
 import 'package:input_sheet/inputs/IpsInputDatetime.dart';
 import 'package:input_sheet/inputs/IpsInputMultioptions.dart';
+import 'package:input_sheet/inputs/IpsInputPassword.dart';
 import 'package:input_sheet/inputs/IpsInputTime.dart';
 import 'package:input_sheet/utils/IpsMediaType.dart';
 import 'package:input_sheet/utils/IpsModeCamera.dart';
@@ -49,6 +50,26 @@ class InputSheet {
       this.cancelText,
       this.doneText,
     ).open(new IpsInputText(
+      textInputType,
+      placeholder,
+      value,
+      onDone,
+      autofocus: keyboardAutofocus,
+    ));
+  }
+
+  password({
+    TextInputType textInputType = TextInputType.text,
+    String placeholder = "Placeholder",
+    dynamic value,
+    Function(String) onDone,
+  }) {
+    Sheet(
+      this._context,
+      this.label,
+      this.cancelText,
+      this.doneText,
+    ).open(new IpsInputPassword(
       textInputType,
       placeholder,
       value,
@@ -285,20 +306,6 @@ class InputSheet {
       ),
     );
   }
-
-  // newPhoto({
-  //   File file,
-  //   @required Function(File, Uint8List) onDone,
-  // }) {
-  //   Sheet(
-  //     this._context,
-  //     null,
-  //     this.cancelText,
-  //     this.doneText,
-  //     paddingVertical: 0,
-  //     showDoneButton: false,
-  //   ).openCamera(file: file, onDone: onDone);
-  // }
 
   video({
     File file,
