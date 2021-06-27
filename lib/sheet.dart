@@ -1,11 +1,8 @@
-import 'dart:io';
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_keyboard_size/flutter_keyboard_size.dart';
-import 'package:image_picker/image_picker.dart';
+// import 'package:image_picker/image_picker.dart';
 import 'package:keyboard_utils/widgets.dart';
 
 import 'inputs/IpsInput.dart';
@@ -172,57 +169,57 @@ class Sheet {
     );
   }
 
-  openCamera({
-    File file,
-    @required Function(File, Uint8List) onDone,
-  }) {
-    File _selectedFile;
-    showModalBottomSheet(
-        context: _context,
-        builder: (BuildContext bc) {
-          return SafeArea(
-            child: Container(
-              child: new Wrap(
-                children: <Widget>[
-                  new ListTile(
-                      leading: new Icon(Icons.photo_library),
-                      title: new Text('Photo Library'),
-                      onTap: () async {
-                        if (file != null) {
-                          _selectedFile = file;
-                        }
-                        _selectedFile = await _imgFromGallery();
-                        if (_selectedFile != null) {
-                          onDone(_selectedFile, _selectedFile.readAsBytesSync());
-                        }
-                        Navigator.of(_context).pop();
-                      }),
-                  new ListTile(
-                    leading: new Icon(Icons.photo_camera),
-                    title: new Text('Camera'),
-                    onTap: () async {
-                      if (file != null) {
-                        _selectedFile = file;
-                      }
-                      _selectedFile = await _imgFromCamera();
-                      if (_selectedFile != null) {
-                        onDone(_selectedFile, _selectedFile.readAsBytesSync());
-                      }
-                      Navigator.of(_context).pop();
-                    },
-                  ),
-                ],
-              ),
-            ),
-          );
-        });
-  }
-
-  _imgFromCamera() async {
-    return ImagePicker.pickImage(source: ImageSource.camera, imageQuality: 99);
-  }
-
-  Future<File> _imgFromGallery() {
-    return ImagePicker.pickImage(source: ImageSource.gallery, imageQuality: 99);
-  }
+  // openCamera({
+  //   File file,
+  //   @required Function(File, Uint8List) onDone,
+  // }) {
+  //   File _selectedFile;
+  //   showModalBottomSheet(
+  //       context: _context,
+  //       builder: (BuildContext bc) {
+  //         return SafeArea(
+  //           child: Container(
+  //             child: new Wrap(
+  //               children: <Widget>[
+  //                 new ListTile(
+  //                     leading: new Icon(Icons.photo_library),
+  //                     title: new Text('Photo Library'),
+  //                     onTap: () async {
+  //                       if (file != null) {
+  //                         _selectedFile = file;
+  //                       }
+  //                       _selectedFile = await _imgFromGallery();
+  //                       if (_selectedFile != null) {
+  //                         onDone(_selectedFile, _selectedFile.readAsBytesSync());
+  //                       }
+  //                       Navigator.of(_context).pop();
+  //                     }),
+  //                 new ListTile(
+  //                   leading: new Icon(Icons.photo_camera),
+  //                   title: new Text('Camera'),
+  //                   onTap: () async {
+  //                     if (file != null) {
+  //                       _selectedFile = file;
+  //                     }
+  //                     _selectedFile = await _imgFromCamera();
+  //                     if (_selectedFile != null) {
+  //                       onDone(_selectedFile, _selectedFile.readAsBytesSync());
+  //                     }
+  //                     Navigator.of(_context).pop();
+  //                   },
+  //                 ),
+  //               ],
+  //             ),
+  //           ),
+  //         );
+  //       });
+  // }
+  //
+  // _imgFromCamera() async {
+  //   return ImagePicker.pickImage(source: ImageSource.camera, imageQuality: 99);
+  // }
+  //
+  // Future<File> _imgFromGallery() {
+  //   return ImagePicker.pickImage(source: ImageSource.gallery, imageQuality: 99);
+  // }
 }

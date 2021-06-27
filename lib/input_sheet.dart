@@ -286,19 +286,19 @@ class InputSheet {
     );
   }
 
-  newPhoto({
-    File file,
-    @required Function(File, Uint8List) onDone,
-  }) {
-    Sheet(
-      this._context,
-      null,
-      this.cancelText,
-      this.doneText,
-      paddingVertical: 0,
-      showDoneButton: false,
-    ).openCamera(file: file, onDone: onDone);
-  }
+  // newPhoto({
+  //   File file,
+  //   @required Function(File, Uint8List) onDone,
+  // }) {
+  //   Sheet(
+  //     this._context,
+  //     null,
+  //     this.cancelText,
+  //     this.doneText,
+  //     paddingVertical: 0,
+  //     showDoneButton: false,
+  //   ).openCamera(file: file, onDone: onDone);
+  // }
 
   video({
     File file,

@@ -3,7 +3,8 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:image_picker/image_picker.dart';
+
+// import 'package:image_picker/image_picker.dart';
 
 import 'IpsInput.dart';
 
@@ -55,19 +56,19 @@ class _IpsInputNewCameraState extends State<IpsInputNewCamera> {
     super.dispose();
   }
 
-  _imgFromCamera() async {
-    File image = await ImagePicker.pickImage(source: ImageSource.camera, imageQuality: 50);
-
-    setState(() {
-      _selectedFile = image;
-    });
-  }
-
-  _imgFromGallery() async {
-    File image = await ImagePicker.pickImage(source: ImageSource.gallery, imageQuality: 50);
-
-    setState(() {
-      _selectedFile = image;
-    });
-  }
+  // _imgFromCamera() async {
+  //   File image = await ImagePicker.pickImage(source: ImageSource.camera, imageQuality: 50);
+  //
+  //   setState(() {
+  //     _selectedFile = image;
+  //   });
+  // }
+  //
+  // _imgFromGallery() async {
+  //   File image = await ImagePicker.pickImage(source: ImageSource.gallery, imageQuality: 50);
+  //
+  //   setState(() {
+  //     _selectedFile = image;
+  //   });
+  // }
 }
