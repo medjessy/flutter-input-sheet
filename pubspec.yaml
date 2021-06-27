@@ -28,7 +28,7 @@ dependencies:
   flutter_keyboard_size: ^0.1.2+2
   flutter_cupertino_date_picker:
     git:
-      url: https://github.com/imshashank/flutter-cupertino-date-picker
+      url: https://github.com/medjessy/flutter-cupertino-date-picker
       ref: master
 
 dev_dependencies:
