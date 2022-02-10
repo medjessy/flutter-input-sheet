@@ -19,7 +19,7 @@ dependencies:
   path_provider: 2.0.1
   keyboard_utils: ^1.2.1
   after_layout: ^1.0.7+2
-  video_compress: ^2.0.0
+  video_compress: ^3.0.0
   video_player: ^2.2.18
   flutter_masked_text: ^0.8.0
   permission_handler: 8.1.1
