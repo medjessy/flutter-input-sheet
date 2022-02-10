@@ -576,7 +576,7 @@ class _IpsInputCameraState extends State<IpsInputCamera> {
                                       child: Container(
                                         color: Colors.black,
                                         child: videoController
-                                                    ?.value?.initialized ??
+                                                    ?.value?.isInitialized ??
                                                 false == true
                                             ? AspectRatio(
                                                 aspectRatio: videoController
