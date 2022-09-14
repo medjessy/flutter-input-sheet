@@ -47,6 +47,8 @@ class IpsCard extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
+                  this.icon ?? SizedBox.shrink(),
+                  SizedBox(width: 10),
                   Expanded(
                     child: IntrinsicHeight(
                       child: Column(
@@ -63,8 +65,6 @@ class IpsCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(width: 10),
-                  this.icon ?? SizedBox.shrink()
                 ],
               ),
             ),
